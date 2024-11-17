@@ -533,7 +533,7 @@ export default function Component() {
                 Haz tu pedido ahora y disfruta de nuestros platos caseros en la comodidad de tu hogar.
               </p>
               <a
-                href="#order"
+                href="https://casadecomidas.vercel.app"
                 className="inline-block bg-yellow-500 text-white font-medium py-3 px-6 rounded-md hover:bg-yellow-600 focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
               >
                 Hacer Pedido
