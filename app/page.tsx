@@ -8,12 +8,20 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
+import InstagramFeed from "@/components/instagram-feed";
+
 import MenuSection from "@/components/MenuSection";
 import TestimonialsSection from "@/components/testimonios";
 
 import CarruselMinimalista from "@/components/carrusel-minimalista"
 
 import LoadingAnimation from "@/components/loader";
+
+import HeroSection from "@/components/heroSection";
+
+import AboutSection from "@/components/AboutSection";
+
+//import DestacadosSection from "@/components/Destacados";
 export default function Component() {
   const [isLoading, setIsLoading] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -45,219 +53,10 @@ export default function Component() {
   }
   return (
     <div className="flex min-h-screen w-full flex-col items-center bg-white">
-      <header className="flex h-20 w-full max-w-7xl items-center justify-between px-4 md:px-6 mx-auto">
-        {/* Menú móvil */}
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Toggle navigation menu">
-              <Menu className="h-6 w-6" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="p-4">
-            <nav className="grid gap-4">
-              <Link className="hover:text-foreground/80 text-lg font-medium" href="#about">
-                Sobre Nosotros
-              </Link>
-              <Link className="hover:text-foreground/80 text-lg font-medium" href="#services">
-                Servicios
-              </Link>
-              <Link className="hover:text-foreground/80 text-lg font-medium" href="#menu">
-                Menú
-              </Link>
-              <Link className="hover:text-foreground/80 text-lg font-medium" href="#contact">
-                Contacto
-              </Link>
-            </nav>
-          </SheetContent>
-        </Sheet>
-
-        {/* Logo - Centrado en móvil */}
-        <Link
-          className="absolute left-1/2 transform -translate-x-1/2 lg:relative lg:left-0 lg:transform-none text-2xl font-serif font-bold"
-          href="#home"
-        >
-          CASA LOLY
-        </Link>
-
-        {/* Menú para pantallas grandes */}
-        <nav className="hidden lg:flex gap-6">
-          <Link className="hover:text-foreground/80 text-lg font-medium" href="#about">
-            Sobre Nosotros
-          </Link>
-          <Link className="hover:text-foreground/80 text-lg font-medium" href="#services">
-            Servicios
-          </Link>
-          <Link className="hover:text-foreground/80 text-lg font-medium" href="#menu">
-            Menú
-          </Link>
-          <Link className="hover:text-foreground/80 text-lg font-medium" href="#contact">
-            Contacto
-          </Link>
-        </nav>
-      </header>
-
       <main className="flex-1 w-full">
-        <section className="relative w-full h-[70vh] flex items-center justify-center" id="home">
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/header-placeholder.jpg"
-          >
-            <source src="/header.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-          <div className="relative z-10 text-center text-white px-4">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              ¡En tu mesa, lo mejor!
-            </h1>
-            <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-6">
-              Platos caseros y comida para llevar con productos frescos y de calidad.
-            </p>
-            <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-4xl mx-auto gap-6 lg:gap-0 space-y-8 lg:space-y-0">
-              {/* Botón "Paella" */}
-              <div className="relative flex items-center justify-center group">
-                <Link
-                  href="#menu"
-                  className="bg-white text-black rounded-full shadow-lg flex items-center justify-center text-lg font-bold"
-                  style={{
-                    borderRadius: "50%", // Hace el botón circular
-                    width: "120px", // Tamaño en pantallas pequeñas
-                    height: "120px", // Tamaño en pantallas pequeñas
-                    position: "relative",
-                  }}
-                >
-                  Ver Menú
-                </Link>
+        <HeroSection />
 
-                {/* Asas de la paella */}
-                <div
-                  className="absolute top-1/2 -translate-y-1/2 left-[-15px] bg-white w-5 h-3 rounded-full shadow-md pointer-events-none group-hover:-translate-x-2 transition-transform duration-300"
-                ></div>
-                <div
-                  className="absolute top-1/2 -translate-y-1/2 right-[-15px] bg-white w-5 h-3 rounded-full shadow-md pointer-events-none group-hover:translate-x-2 transition-transform duration-300"
-                ></div>
-              </div>
-
-              {/* Botón "Fuente de horno" */}
-              <div className="relative flex items-center justify-center group">
-                <Link
-                  href="https://casadecomidas.vercel.app/" // Cambiado al destino absoluto
-                  className="bg-yellow-500 text-white rounded-lg shadow-lg flex items-center justify-center text-lg font-bold"
-                  style={{
-                    width: "160px", // Tamaño en pantallas pequeñas
-                    height: "80px", // Tamaño en pantallas pequeñas
-                    borderRadius: "12px", // Da el efecto de la fuente de horno
-                    position: "relative",
-                  }}
-                >
-                  Hacer Pedido
-                </Link>
-                {/* Asa superior */}
-                <div
-                  className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 w-8 h-3 rounded-full shadow-md pointer-events-none group-hover:-translate-y-1 transition-transform duration-300"
-                ></div>
-                {/* Asa inferior */}
-                <div
-                  className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 w-8 h-3 rounded-full shadow-md pointer-events-none group-hover:translate-y-1 transition-transform duration-300"
-                ></div>
-              </div>
-            </div>
-
-
-
-          </div>
-        </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32" id="about">
-          <div className="container mx-auto px-4 md:px-6">
-            {/* Encabezado */}
-            <div className="text-center mb-16">
-              <h2 className="font-serif text-3xl font-bold tracking-tighter sm:text-5xl mb-6">
-                SOBRE NOSOTROS
-              </h2>
-              <p className="max-w-3xl mx-auto text-gray-600 md:text-lg">
-                Más de 10 años dedicados a llevar la auténtica comida casera a tu mesa,
-                elaborada con pasión, tradición y los mejores ingredientes.
-              </p>
-            </div>
-
-            {/* Contenido */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* Imagen del equipo o local */}
-              <div className="relative group w-full h-80 md:h-[400px] rounded-lg overflow-hidden shadow-lg">
-                {/* Imagen */}
-                <Image
-                  src="/about-us.jpg"
-                  alt="Equipo de Casa Loly"
-                  layout="fill"
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
-                {/* Texto superpuesto */}
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-lg font-bold">Nuestro equipo</h3>
-                  <p className="text-sm">Conoce a quienes hacen esto posible.</p>
-                </div>
-              </div>
-
-              {/* Información resumida con íconos minimalistas alineados */}
-              <div className="flex flex-col justify-center space-y-8">
-                {/* Historia */}
-                <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-gray-900 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-gray-900">
-                      Nuestra Historia
-                    </h3>
-                    <p className="text-gray-600">
-                      Casa Loly nació con la misión de ofrecer comida casera que combina
-                      tradición, calidad y precios accesibles. Cada plato refleja
-                      nuestras raíces y pasión por la cocina.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Filosofía */}
-                <div className="flex items-start space-x-4">
-                  <Heart className="w-6 h-6 text-gray-900 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-gray-900">
-                      Nuestra Filosofía
-                    </h3>
-                    <p className="text-gray-600">
-                      Ingredientes frescos, locales y de calidad son el corazón de
-                      nuestra cocina. Creemos en platos honestos que transmiten amor en
-                      cada bocado.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Ingredientes locales */}
-                <div className="flex items-start space-x-4">
-                  <Leaf className="w-6 h-6 text-gray-900 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-gray-900">
-                      Ingredientes Frescos
-                    </h3>
-                    <p className="text-gray-600">
-                      Nos enorgullece trabajar con ingredientes locales para garantizar
-                      la frescura y apoyar a los productores de nuestra comunidad.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-
+        <MenuSection />
 
         <section className="w-full py-16 md:py-24 bg-gray-50" id="services">
           <div className="container mx-auto px-4 md:px-6">
@@ -334,8 +133,7 @@ export default function Component() {
           </div>
         </section>
 
-
-        <MenuSection />
+        <AboutSection />
 
         <section className="w-full mx-auto py-12 md:py-24 lg:py-32" id="menu">
           <TestimonialsSection />
@@ -469,6 +267,8 @@ export default function Component() {
             </div>
           </div>
         </section>
+
+        <InstagramFeed />
 
 
 
