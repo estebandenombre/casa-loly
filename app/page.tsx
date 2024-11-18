@@ -1,12 +1,12 @@
 'use client'
 import { useState, useEffect } from "react";
-import { Menu, ArrowUp } from 'lucide-react'
-import { MapPin, Phone, Mail, Clock, Heart, Leaf } from 'lucide-react';
+import { ArrowUp } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+
 
 import InstagramFeed from "@/components/instagram-feed";
 

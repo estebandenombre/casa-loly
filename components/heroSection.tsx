@@ -4,7 +4,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
