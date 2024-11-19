@@ -1,13 +1,14 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { ChevronDown, ChevronUp } from 'lucide-react'
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 export default function MenuSection() {
-    const [showAll, setShowAll] = useState(false);
+    const [showAll, setShowAll] = useState(false)
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
     const platos = [
         { title: "Paella Valenciana", description: "Un clásico preparado con ingredientes frescos y mucho sabor.", image: "/paella.jpg" },
@@ -21,25 +22,24 @@ export default function MenuSection() {
         { title: "Tortilla de Patatas", description: "Un clásico español hecho al estilo tradicional.", image: "/tortilla.jpg" },
         { title: "Pescado al Horno", description: "Pescado fresco horneado con hierbas y limón.", image: "/pescado.jpg" },
         { title: "Lentejas Estofadas", description: "Un plato reconfortante lleno de sabor y nutrientes.", image: "/lentejas.jpg" },
-    ];
+    ]
 
-    const visiblePlatos = showAll ? platos : platos.slice(0, 6);
+    const visiblePlatos = showAll ? platos : platos.slice(0, 6)
 
-    // Variants for staggered animation
     const containerVariants = {
         hidden: { opacity: 0 },
         show: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2, // Delay between each child animation
+                staggerChildren: 0.2,
             },
         },
-    };
+    }
 
     const itemVariants = {
         hidden: { opacity: 0, y: 20 },
         show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-    };
+    }
 
     return (
         <section className="w-full mx-auto py-12 md:py-24 lg:py-32" id="menu">
@@ -52,11 +52,7 @@ export default function MenuSection() {
                         Explora nuestra variedad de platos caseros, preparados con ingredientes frescos y de la mejor calidad.
                     </p>
                 </div>
-                {/* Destacado: Promoción del jueves */}
 
-
-
-                {/* Grid de platos con animación de fade-in */}
                 <motion.div
                     className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
                     variants={containerVariants}
@@ -66,15 +62,21 @@ export default function MenuSection() {
                     {visiblePlatos.map((plato, index) => (
                         <motion.div
                             key={index}
-                            className="flex flex-col items-center space-y-4"
+                            className={`flex flex-col items-center space-y-4 transition-all duration-300 ease-in-out
+                                ${hoveredIndex !== null && hoveredIndex !== index ? 'md:opacity-50 md:blur-sm' : ''}
+                                ${hoveredIndex === index ? 'md:scale-105' : ''}
+                            `}
                             variants={itemVariants}
+                            onMouseEnter={() => setHoveredIndex(index)}
+                            onMouseLeave={() => setHoveredIndex(null)}
                         >
-                            <div className="relative overflow-hidden rounded-full w-48 h-48 border-4 border-gray-300 shadow-lg hover:scale-105 transition-transform duration-300">
+                            <div className="relative overflow-hidden rounded-full w-48 h-48 border-4 border-gray-300 shadow-lg transition-transform duration-300 hover:scale-110">
                                 <Image
                                     alt={plato.title}
                                     src={plato.image}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover transition-transform duration-300 hover:scale-110"
+                                    loading="lazy"
                                 />
                             </div>
                             <h3 className="font-serif text-xl font-bold text-gray-800">{plato.title}</h3>
@@ -83,10 +85,7 @@ export default function MenuSection() {
                     ))}
                 </motion.div>
 
-                {/* Botones */}
                 <div className="mt-20 flex flex-col md:flex-row items-center justify-center gap-6">
-                    {/* Botón de Hacer Pedido */}
-                    {/* Botón de Ver Más o Ver Menos */}
                     {!showAll ? (
                         <Button
                             onClick={() => setShowAll(true)}
@@ -113,10 +112,8 @@ export default function MenuSection() {
                             <span className="leading-tight text-base">Haz tu encargo online</span>
                         </div>
                     </Button>
-
                 </div>
             </div>
         </section>
-
-    );
+    )
 }

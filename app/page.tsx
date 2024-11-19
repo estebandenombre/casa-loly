@@ -80,6 +80,7 @@ export default function Component() {
                     alt="Comidas preparadas"
                     fill
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -112,6 +113,7 @@ export default function Component() {
                     alt="Servicio de Catering"
                     fill
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6 text-center">

@@ -70,3 +70,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.custom-pagination .swiper-pagination-bullet {
+  display: none;
+  /* Oculta todas las bolas de paginación */
+}
