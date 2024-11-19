@@ -285,8 +285,7 @@ export default function Component() {
           className="fixed bottom-8 right-8 bg-yellow-500 text-white p-3 rounded-full shadow-lg hover:bg-yellow-600 transition-all duration-300"
           aria-label="Scroll to top"
         >
-          <ArrowUp className="h-6 w-6 z-[9999] fixed" />
-
+          <ArrowUp className="h-6 w-6 z-[9999]" />
         </button>
       )}
       <footer className="bg-gray-900 text-white py-12 w-full" id='contact'>
