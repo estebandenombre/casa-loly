@@ -11,17 +11,17 @@ export default function MenuSection() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
     const platos = [
-        { title: "Paella Valenciana", description: "Un clásico preparado con ingredientes frescos y mucho sabor.", image: "/paella.jpg" },
-        { title: "Arroz Negro", description: "Arroz con tinta de calamar, cremoso y delicioso.", image: "/arroz-negro.jpg" },
-        { title: "Fideuá", description: "Fideos con mariscos al estilo tradicional.", image: "/fideua.jpg" },
-        { title: "Ensalada Fresca", description: "Una opción ligera y saludable, ideal para cualquier comida.", image: "/ensalada.jpg" },
-        { title: "Costillas BBQ", description: "Jugosas costillas con salsa barbacoa casera.", image: "/costillas.jpg" },
-        { title: "Albóndigas a la Jardinera", description: "Albóndigas caseras con verduras en una deliciosa salsa.", image: "/albondigas.jpg" },
-        { title: "Canelones de Espinacas", description: "Canelones rellenos de espinacas y ricotta, cubiertos de bechamel.", image: "/canelones.jpg" },
-        { title: "Pollo al Ajillo", description: "Jugosos trozos de pollo en una salsa de ajo y perejil.", image: "/pollo.jpg" },
-        { title: "Tortilla de Patatas", description: "Un clásico español hecho al estilo tradicional.", image: "/tortilla.jpg" },
-        { title: "Pescado al Horno", description: "Pescado fresco horneado con hierbas y limón.", image: "/pescado.jpg" },
-        { title: "Lentejas Estofadas", description: "Un plato reconfortante lleno de sabor y nutrientes.", image: "/lentejas.jpg" },
+        { title: "Paella Valenciana", description: "Un clásico preparado con ingredientes frescos y mucho sabor.", image: "/paella.webp" },
+        { title: "Arroz Negro", description: "Arroz con tinta de calamar, cremoso y delicioso.", image: "/arroz-negro.webp" },
+        { title: "Fideuá", description: "Fideos con mariscos al estilo tradicional.", image: "/fideua.webp" },
+        { title: "Ensalada Fresca", description: "Una opción ligera y saludable, ideal para cualquier comida.", image: "/ensalada.webp" },
+        { title: "Costillas BBQ", description: "Jugosas costillas con salsa barbacoa casera.", image: "/costillas.webp" },
+        { title: "Albóndigas a la Jardinera", description: "Albóndigas caseras con verduras en una deliciosa salsa.", image: "/albondigas.webp" },
+        { title: "Canelones de Espinacas", description: "Canelones rellenos de espinacas y ricotta, cubiertos de bechamel.", image: "/canelones.webp" },
+        { title: "Pollo al Ajillo", description: "Jugosos trozos de pollo en una salsa de ajo y perejil.", image: "/pollo.webp" },
+        { title: "Tortilla de Patatas", description: "Un clásico español hecho al estilo tradicional.", image: "/tortilla.webp" },
+        { title: "Pescado al Horno", description: "Pescado fresco horneado con hierbas y limón.", image: "/pescado.webp" },
+        { title: "Lentejas Estofadas", description: "Un plato reconfortante lleno de sabor y nutrientes.", image: "/lentejas.webp" },
     ]
 
     const visiblePlatos = showAll ? platos : platos.slice(0, 6)
