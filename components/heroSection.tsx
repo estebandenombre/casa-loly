@@ -131,10 +131,10 @@ export default function HeroSection() {
             <div className="relative z-10 flex-grow flex items-center justify-center pt-20">
                 <div className="text-center text-white px-4">
                     <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                        ¡En tu mesa, lo mejor!
+                        Comidas preparadas para llevar
                     </h1>
                     <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-6">
-                        Platos preparados con pasión y los mejores ingredientes.
+                        ¡En tu mesa, lo mejor!
                     </p>
                     <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-4xl mx-auto gap-6 lg:gap-0 space-y-8 lg:space-y-0">
                         {/* Botón "Ver Menú" (Paella) */}
