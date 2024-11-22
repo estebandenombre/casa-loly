@@ -8,21 +8,21 @@ import { Heart, MessageCircle, Send, Bookmark } from 'lucide-react'
 const instagramPosts = [
     {
         id: 1,
-        imageUrl: "/paella.jpg",
+        imageUrl: "/paella.webp",
         likes: 1234,
         comments: 56,
         caption: "Deliciosa paella valenciana recién hecha. ¡Un clásico de nuestra cocina! 🥘 #Paella #ComidaEspañola",
     },
     {
         id: 2,
-        imageUrl: "/chef.jpg",
+        imageUrl: "/chef.webp",
         likes: 2345,
         comments: 78,
         caption: "Nuestro chef preparando un exquisito postre. La magia sucede en la cocina. 👨‍🍳✨ #ChefEnAcción #Repostería",
     },
     {
         id: 3,
-        imageUrl: "/gazpacho.jpg",
+        imageUrl: "/gazpacho.webp",
         likes: 3456,
         comments: 90,
         caption: "Nueva adición a nuestro menú: Gazpacho andaluz. Refrescante y lleno de sabor. 🥣🍅 #Gazpacho #CocinaAndaluza",

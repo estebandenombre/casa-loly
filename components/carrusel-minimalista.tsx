@@ -14,11 +14,11 @@ export default function CarruselMinimalista() {
     const [api, setApi] = React.useState<EmblaCarouselType | null>(null); // Usa el tipo correcto.
 
     const images = [
-        "/image1.jpg", // Ruta de la primera imagen
-        "/image2.jpg", // Ruta de la segunda imagen
-        "/image3.jpg", // Ruta de la tercera imagen
-        "/image4.jpg", // Ruta de la cuarta imagen
-        "/image5.jpg", // Ruta de la quinta imagen
+        "/image1.webp", // Ruta de la primera imagen
+        "/image2.webp", // Ruta de la segunda imagen
+        "/image3.webp", // Ruta de la tercera imagen
+        "/image4.webp", // Ruta de la cuarta imagen
+        "/image5.webp", // Ruta de la quinta imagen
     ];
 
     React.useEffect(() => {

@@ -5,19 +5,19 @@ const destacados = [
     {
         title: "Tomato Salad",
         category: "Vegetable",
-        image: "/tomato-salad.jpg",
+        image: "/tomato-salad.webp",
         price: 20,
     },
     {
         title: "Paella Valenciana",
         category: "Traditional",
-        image: "/paella.jpg",
+        image: "/paella.webp",
         price: 25,
     },
     {
         title: "Arroz Negro",
         category: "Seafood",
-        image: "/arroz-negro.jpg",
+        image: "/arroz-negro.webp",
         price: 22,
     },
 ];
