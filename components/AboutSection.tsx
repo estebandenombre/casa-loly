@@ -11,28 +11,28 @@ import { MapPin, Heart, Leaf, Star } from 'lucide-react';
 const AboutSection: React.FC = () => {
     const slides = [
         {
-            image: '/about-us.jpg',
+            image: '/about-us.webp',
             title: 'Nuestro Equipo',
             description:
                 'Un equipo apasionado que pone amor y dedicación en cada plato. ¡Conócenos y siente la calidez familiar!',
             icon: <Star className="w-10 h-10 text-yellow-400" />,
         },
         {
-            image: '/about-philosophy.jpg',
+            image: '/about-philosophy.webp',
             title: 'Nuestra Filosofía',
             description:
                 'Creemos en comida casera que cuenta historias. Honestidad, tradición y sabor en cada bocado.',
             icon: <Heart className="w-10 h-10 text-red-500" />,
         },
         {
-            image: '/about-ingredients.jpg',
+            image: '/about-ingredients.webp',
             title: 'Ingredientes Frescos',
             description:
                 'Trabajamos con ingredientes frescos y locales, apoyando a nuestros productores y garantizando calidad en cada plato.',
             icon: <Leaf className="w-10 h-10 text-green-500" />,
         },
         {
-            image: '/about-history.jpg',
+            image: '/about-history.webp',
             title: 'Nuestra Historia',
             description:
                 'Más de 10 años llevando sabor y tradición a tu mesa. Nuestra pasión es hacerte sentir como en casa.',
