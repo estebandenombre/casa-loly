@@ -109,7 +109,7 @@ export default function Component() {
               <div className="group relative overflow-hidden bg-white rounded-lg shadow-lg">
                 <div className="relative h-64 sm:h-72 md:h-80">
                   <Image
-                    src="/catering.jpg"
+                    src="/catering.webp"
                     alt="Servicio de Catering"
                     fill
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
